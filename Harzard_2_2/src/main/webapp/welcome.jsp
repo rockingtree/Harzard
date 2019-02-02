@@ -16,7 +16,7 @@
         }
         input{
            font-size: 100%;
-         }
+        }
     </style>
 </head>
 <body>

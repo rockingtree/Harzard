@@ -17,24 +17,47 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setCharacterEncoding("utf-8");
-        String username = req.getParameter("userName");
-        String password = req.getParameter("pwd");
+        System.out.println("userServlet已调用");
 
-        System.out.println("userName: " + username);
+        req.setCharacterEncoding("utf-8");
+        String username = req.getParameter("username");
+        String password = req.getParameter("pwd");
+        String opr = req.getParameter("opr");
+
+        System.out.println("username: " + username);
         System.out.println("password: " + password);
+        System.out.println("opr: " + opr);
 
         UserService userService = new UserServiceImpl();
         List<User> users = userService.getAll();
-        for (User user : users) {
-            if (user.getName().equals(username) && user.getPassword().equals(password)) {
-                if (user.getType().equals("admin")) {
-                    req.getRequestDispatcher("/admin/main.jsp").forward(req, resp);
-                } else if (user.getType().equals("common")) {
+
+        switch (opr) {
+            case "login":
+                for (User user : users) {
+                    if (user.getName().equals(username) && user.getPassword().equals(password)) {
+                        if (user.getType().equals("admin")) {
+                            req.getRequestDispatcher("/admin/main.jsp").forward(req, resp);
+                        } else if (user.getType().equals("common")) {
+                            req.getRequestDispatcher("/common/main.jsp").forward(req, resp);
+                        }
+                    }
+                }
+                req.getRequestDispatcher("/fail.jsp").forward(req, resp);
+                break;
+            case "register":
+                String pwdCfm = req.getParameter("pwdCfm");
+                System.out.println(pwdCfm);
+                for (User user : users) {
+                    if (user.getName().equals(username)) {
+                        req.getRequestDispatcher("/common/main.jsp").forward(req, resp);
+                    }
+                }
+                if (!password.equals(pwdCfm)) {
                     req.getRequestDispatcher("/common/main.jsp").forward(req, resp);
                 }
-            }
+                req.getRequestDispatcher("index.jsp").forward(req, resp);
+                userService.addUser(username,password);
+                break;
         }
-        req.getRequestDispatcher("/fail.jsp").forward(req, resp);
     }
 }

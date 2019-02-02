@@ -1145,7 +1145,7 @@
       <Position>4</Position>
       <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;commen&apos;</DefaultExpression>
+      <DefaultExpression>&apos;common&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="287" parent="279" name="id">

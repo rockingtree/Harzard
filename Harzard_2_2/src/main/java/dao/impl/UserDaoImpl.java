@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
+    private BaseDao baseDao = new BaseDao();
     @Override
     public List<User> getAll() {
-        BaseDao baseDao = new BaseDao();
         ResultSet resultSet = baseDao.executeQuery("select name,password,type from user");
         List<User> users=new ArrayList<>();
         try {
@@ -28,5 +28,10 @@ public class UserDaoImpl implements UserDao {
         }
         baseDao.closeAll();
         return users;
+    }
+
+    @Override
+    public void addUser(String username, String password) {
+        baseDao.executeUpdate("insert into user (name,password) values(?,?)",username,password);
     }
 }

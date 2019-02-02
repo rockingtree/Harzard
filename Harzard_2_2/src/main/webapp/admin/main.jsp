@@ -9,6 +9,10 @@
 <html>
 <head>
     <title>功能页面</title>
+    <style type="text/css">body{
+        font-size: 300%;
+        text-align: center;
+    }</style>
 </head>
 <body>
 <ol>

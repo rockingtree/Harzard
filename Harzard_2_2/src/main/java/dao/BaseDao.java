@@ -48,7 +48,7 @@ public class BaseDao {
     }
 
     //执行DQL
-    public ResultSet executeQuery(String sql, Objects... objects) {
+    public ResultSet executeQuery(String sql, Object... objects) {
         getConnection();
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -65,7 +65,7 @@ public class BaseDao {
     }
 
     //执行DML
-    public int executeUpdate(String sql, Objects... objects) {
+    public int executeUpdate(String sql, Object... objects) {
         getConnection();
         try {
             preparedStatement = connection.prepareStatement(sql);
