@@ -27,10 +27,14 @@ public class UserServlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         List<User> users = userService.getAll();
         for (User user : users) {
-            if (user.getName().equals(username) && user.getPassword().equals(password)){
-                req.getRequestDispatcher("/welcome.jsp").forward(req,resp);
+            if (user.getName().equals(username) && user.getPassword().equals(password)) {
+                if (user.getType().equals("admin")) {
+                    req.getRequestDispatcher("/admin/main.jsp").forward(req, resp);
+                } else if (user.getType().equals("common")) {
+                    req.getRequestDispatcher("/common/main.jsp").forward(req, resp);
+                }
             }
         }
-        req.getRequestDispatcher("/fail.jsp").forward(req,resp);
+        req.getRequestDispatcher("/fail.jsp").forward(req, resp);
     }
 }
