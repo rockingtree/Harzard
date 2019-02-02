@@ -14,6 +14,7 @@
 <ol>
     <li>开始游戏</li>
     <li>管理卡组</li>
+    <li><a href="../index.jsp">退出登录</a></li>
 </ol>
 </body>
 </html>

@@ -14,7 +14,7 @@
 <ol>
     <li>创建卡牌</li>
     <li>修改卡牌</li>
-    <li>返回</li>
+    <li><a href="../index.jsp">返回</a> </li>
 </ol>
 </body>
 </html>

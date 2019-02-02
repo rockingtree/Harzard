@@ -11,12 +11,12 @@
     <title>Harzard</title>
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <style type="text/css">
-        p#test{
+        #login{
+            font-size: 300%;
             color: brown;
         }
-        #login{
-            font-size: 30px;
-            color: brown;
+        input,button{
+            font-size: 100%;
         }
     </style>
 </head>
@@ -24,12 +24,11 @@
 <%--<div id="frame">
     <img src="img/frame.jpg" alt="主页面" height="80%">
 </div>--%>
-<p id="test">测试</p>
 <form action="userList" method="post" id="login">
-    <div><label>用户名: <input type="text" name="userName"></label></div>
-    <div><label>密码: <input type="password" name="pwd"></label></div>
+    <div><label>用户名: <input type="text" name="userName" style="width:250px;height:50px"></label></div>
+    <div><label>密码: <input type="password" name="pwd" style="width:250px;height:50px"></label></div>
     <div><input type="submit" value="登录">
-        <button>注册</button>
+        <button style="width:120px;height:70px">注册</button>
     </div>
 </form>
 </body>
