@@ -15,10 +15,10 @@
     }</style>
 </head>
 <body>
-<ol>
+<ul style="list-style: none">
     <li>创建卡牌</li>
     <li>修改卡牌</li>
     <li><a href="../index.jsp">返回</a> </li>
-</ol>
+</ul>
 </body>
 </html>

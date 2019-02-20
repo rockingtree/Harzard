@@ -27,7 +27,10 @@
 <body>
 <form action="userList" method="post" id="login" name="opr">
     <br>
-    <div><label>用户名:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="username" required="required" style="width:250px;height:50px"></label></div>
+    <div><label>用户名:&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="username" required="required"
+               value="<%=request.getParameter("username")==null?"":request.getParameter("username")%>"
+               style="width:250px;height:50px"></label></div>
     <br>
     <div><label>密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" name="pwd" required="required" style="width:250px;height:50px"></label></div>
     <br>

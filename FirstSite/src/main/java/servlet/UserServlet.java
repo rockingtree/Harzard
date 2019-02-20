@@ -49,11 +49,11 @@ public class UserServlet extends HttpServlet {
                 System.out.println(pwdCfm);
                 for (User user : users) {
                     if (user.getName().equals(username)) {
-                        req.getRequestDispatcher("/common/main.jsp").forward(req, resp);
+                        req.getRequestDispatcher("register.jsp").forward(req, resp);
                     }
                 }
                 if (!password.equals(pwdCfm)) {
-                    req.getRequestDispatcher("/common/main.jsp").forward(req, resp);
+                    req.getRequestDispatcher("register.jsp").forward(req, resp);
                 }
                 req.getRequestDispatcher("index.jsp").forward(req, resp);
                 userService.addUser(username,password);
