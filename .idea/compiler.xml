@@ -6,9 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="FirstSite" />
         <module name="FisrtSite" />
         <module name="Harzard_1_1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="FisrtSite" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

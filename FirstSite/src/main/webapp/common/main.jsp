@@ -20,9 +20,10 @@
 欢迎，<span style="color: blue"><%=request.getParameter("username")%></span>
 <br>
 <ul style="list-style: none;line-height: 80px;">
-    <li>开始游戏</li>
-    <li>管理卡组</li>
-    <li><a href="../index.jsp" style="text-decoration: none;color: red">退出登录</a></li>
+    <li><a href="../common/game.jsp" target="_blank" style="text-decoration: none; color: red">开始游戏</a></li>
+    <li><a href="#" style="text-decoration: none;color:red;" >管理卡组</a></li>
+    <li></li>
+    <li><a href="../index.jsp" style="text-decoration: none;color: grey">退出登录</a></li>
 </ul>
 </body>
 </html>
